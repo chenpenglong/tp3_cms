@@ -52,7 +52,7 @@
 					<th width="15%">二维码：</th>
 					<td width="35%">
 						<input type="text" name="ewm" value="{$data.ewm}" size="40" />
-						<input type="button" value=" 图片上传 " class="btn" onclick="showUploadDialog('image','theForm.ewm','__PUBLIC__')" />
+						<input type="button" value=" 图片上传 " class="btn imgbtn" />
 					</td>
 					<th width="15%">地址：</th>
 					<td width="35%"><input type="text" name="address" value="{$data.address}" size="40" /></td>
@@ -154,38 +154,9 @@
 				});
 			});
 		</script>
-		<script type="text/javascript" src="__PUBLIC__/layui/layui.js"></script>
-		<script>
-			layui.use('upload', function() {
-				var upload = layui.upload;
-				//执行实例
-				var uploadInst = upload.render({
-					elem: '.imgbtn', //绑定元素
-					url: "{:U('base/upload')}", //上传接口
-					size: 1024, //限制文件大小，单位 KB
-					done: function(res) {
-						console.log(res);
-						//如果上传失败
-						if(res.code > 0) {
-							//			return layer.msg('上传失败');
-							return layer.msg(res.message);
-						}
-						//上传成功
-						var item = this.item;
-						item.prev("input").val(res.url);
-					},
-					error: function(e) {
-						//演示失败状态，并实现重传
-						var demoText = $('#demoText');
-						demoText.html(
-							'<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-						demoText.find('.demo-reload').on('click', function() {
-							uploadInst.upload();
-						});
-					}
-				});
-			});
-		</script>
+		
+		<include file="Public:layui" />
+		
 	</body>
 
 </html>
