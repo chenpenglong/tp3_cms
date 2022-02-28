@@ -312,5 +312,33 @@ class BaseController extends Controller{
   public function emailHtml(){
     $this->display();
   }
+  
+  /**
+	 * 附件上传
+	 * @return \think\response\Json
+	 */
+	public function upload(){
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     2097152 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg','gif','png','bmp','mp4','pdf','doc','docx');// 设置附件上传类型
+        $upload->rootPath  =     './Upload/'; // 设置附件上传根目录
+        $upload->autoSub = true;
+        $upload->subName = array('date','Y-m-d');
+        // 上传文件 
+        $info   =   $upload->uploadOne($_FILES['file']);
+        if(!$info) {// 上传错误提示错误信息
+            $result = [
+                'code'   => 1,
+                'message' => $upload->getError()
+            ];
+        }else{// 上传成功
+            $result = [
+                'code' => 0,
+                'url'   => 'Upload/'.str_replace('\\', '/', $info['savepath'].$info['savename'])
+            ];
+        }
+
+        return $this->ajaxReturn($result);
+	}
 
 }

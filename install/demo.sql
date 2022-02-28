@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50553
+Source Server Version : 50726
 Source Host           : localhost:3306
-Source Database       : test
+Source Database       : jingfan
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-08-31 16:23:37
+Date: 2022-02-21 17:21:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,6 +35,7 @@ CREATE TABLE `tb_admin` (
 -- ----------------------------
 -- Records of tb_admin
 -- ----------------------------
+INSERT INTO `tb_admin` VALUES ('1', 'admin', '60782b166dfafab9b24545249efad9c3', 'admin', '2', '1645414784', '', '2022-02-21 11:40:04', '');
 
 -- ----------------------------
 -- Table structure for tb_config
@@ -42,37 +43,14 @@ CREATE TABLE `tb_admin` (
 DROP TABLE IF EXISTS `tb_config`;
 CREATE TABLE `tb_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自动编号',
-  `webName` longtext COLLATE utf8_unicode_ci COMMENT '网站名称',
-  `webKeywords` longtext COLLATE utf8_unicode_ci COMMENT '网站首页关键字',
-  `webDescription` longtext COLLATE utf8_unicode_ci COMMENT '网站首页描述',
-  `webLogo` longtext COLLATE utf8_unicode_ci COMMENT '网站LOGO地址',
-  `webCopyright` longtext COLLATE utf8_unicode_ci COMMENT '网站底部版权信息',
-  `isShowPf` int(11) DEFAULT NULL COMMENT '是否右侧漂浮 0NO 1YES',
-  `ShowPfColor` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '漂浮背景颜色',
-  `isSetImg` int(11) DEFAULT NULL COMMENT '默认是否开启生成缩略图 0NO 1YES',
-  `otherCode` longtext COLLATE utf8_unicode_ci COMMENT '第三方的代码',
-  `editorBase` longtext COLLATE utf8_unicode_ci COMMENT '编辑器根路径',
-  `editorImgExt` longtext COLLATE utf8_unicode_ci COMMENT '辑器编图片允许的后缀',
-  `editorLinkExt` longtext COLLATE utf8_unicode_ci COMMENT '附件允许的后缀',
-  `editorMaxSize` int(11) DEFAULT NULL COMMENT '辑器编允许上传文件的最大大小 单位K 例如500K',
-  `isWaterMark` int(11) DEFAULT NULL COMMENT '图片水印是否启用 1YES 0NO',
-  `waterMarkWidth` int(11) DEFAULT NULL COMMENT '启用水印的条件 最小宽度',
-  `waterMarkHeight` int(11) DEFAULT NULL COMMENT '启用水印的条件 最小高度',
-  `waterMarkPosition` int(11) DEFAULT NULL COMMENT '图片水印位置',
-  `waterMarkMarginW` int(11) DEFAULT NULL COMMENT '图片水印边距 左右',
-  `waterMarkMarginH` int(11) DEFAULT NULL COMMENT '图片水印边距 上下',
-  `waterMarkPath` longtext COLLATE utf8_unicode_ci COMMENT '图片水印路径',
-  `tel` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '联系电话',
-  `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '地址',
-  `ewm` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '二维码',
-  `mobile` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `siteconfig` longtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='系统配置表';
 
 -- ----------------------------
 -- Records of tb_config
 -- ----------------------------
-INSERT INTO `tb_config` VALUES ('1', '成都三以网络', '', '', 'Upload/2019-08-26/1613177767_AUTO.png', '<p>Copyright ©2019 成都华佗微纳智能传感科技有限公司 .All rights reserved &nbsp; &nbsp;蜀ICP备111111111号 &nbsp;网站建设：<a href=\"http://www.3eee.cn\" target=\"_blank\">成都三以网络</a></p>', '0', 'BF1919', '1', '', '/module2/', 'jpg|gif|png', 'rar|doc', '2', '0', '400', '300', '9', '5', '5', 'Upload/2013-08-26/1421269743.png', '', '', '', '');
+INSERT INTO `tb_config` VALUES ('1', 'a:18:{s:2:\"id\";s:0:\"\";s:7:\"webName\";s:18:\"成都三以网络\";s:7:\"webLogo\";s:37:\"Upload/2019-08-26/1613177767_AUTO.png\";s:6:\"mobile\";s:0:\"\";s:3:\"tel\";s:0:\"\";s:3:\"ewm\";s:0:\"\";s:7:\"address\";s:0:\"\";s:11:\"webKeywords\";s:0:\"\";s:14:\"webDescription\";s:0:\"\";s:8:\"isShowPf\";s:1:\"0\";s:11:\"ShowPfColor\";s:6:\"BF1919\";s:8:\"isSetImg\";s:1:\"1\";s:9:\"otherCode\";s:0:\"\";s:10:\"editorBase\";s:9:\"/module2/\";s:13:\"editorMaxSize\";s:1:\"2\";s:12:\"editorImgExt\";s:11:\"jpg|gif|png\";s:13:\"editorLinkExt\";s:7:\"rar|doc\";s:12:\"webCopyright\";s:217:\"<p>Copyright ©2019 成都华佗微纳智能传感科技有限公司 .All rights reserved &nbsp; &nbsp;蜀ICP备111111111号 &nbsp;网站建设：<a href=\"http://www.3eee.cn\" target=\"_blank\">成都三以网络</a></p>\";}');
 
 -- ----------------------------
 -- Table structure for tb_float
