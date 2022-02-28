@@ -1,0 +1,62 @@
+
+<script type="text/javascript" src="__JS__/jquery.easing.1.1.js"></script>
+<script type="text/javascript" src="__JS__/jquery-float.js"></script>
+
+<div id="rightPiaoFu" style="background-color:#{$config.ShowPfColor};">
+	<div class="content">
+	<div class='close'>×</div>
+	<if condition="$piaoFuDataList neq null">
+		<ul>
+		<volist name="piaoFuDataList" id="vo">
+			<if condition="$vo.type eq 0">
+				<li class="sort" style="background-color:#{$config.ShowPfColor};">{$vo.title}</li>
+			</if>
+			<if condition="$vo.type eq 1">
+				<li class="qq">
+					<a href="tencent://message/?uin={$vo.code}&Site=点击这里给我发消息&Menu=yes" target="blank">
+					<img border="0" src="http://wpa.qq.com/pa?p=1:{$vo.code}:4" alt="点击这里给我发消息" align="absmiddle" /> {$vo.title}
+					</a>
+				</li>
+			</if>
+			
+			<if condition="$vo.type eq 2">
+				<li class="email">{$vo.code:}</li>
+			</if>
+			
+			<if condition="$vo.type eq 3">
+				<li class="msn">
+					<a href="msnim:chat?contact={$vo.code}" target="blank">
+					<img border="0" src="Tpl/Images/msn.jpg" alt="点击这里给我发消息" align="absmiddle" /> {$vo.title}
+					</a>
+				</li>
+			</if>
+			
+			<if condition="$vo.type eq 4">
+				<li class="skype">
+					<a href="skype:{$vo.code}?call" target="blank">
+					<img border="0" src="Tpl/Images/skype.png" alt="点击这里给我发消息" align="absmiddle" /> {$vo.title}
+					</a>
+				</li>
+			</if>
+			
+			<if condition="$vo.type eq 5">
+				<li class="tel">{$vo.code}</li>
+			</if>
+			
+			<if condition="$vo.type eq 6">
+				<li class="img"><img src="__ROOT__/{$vo.code}" /></li>
+			</if>
+			
+		</volist>
+		</ul>
+	</if>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#rightPiaoFu").floatQQ();
+		$("#rightPiaoFu .close").click(function(){
+			$("#rightPiaoFu").hide();
+		});
+	});
+</script>

@@ -1,0 +1,351 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+BODY {
+	margin: 0px;
+	padding: 0px;
+}
+
+BODY,
+TD,
+TH {
+	FONT-SIZE: 9pt;
+	FONT-FAMILY: Arial, Helvetica, sans-serif, 宋体;
+	color: #000;
+}
+
+a {
+	font-family: 宋体;
+}
+
+a:link {
+	color: #035585;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #035585;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #035585;
+	text-decoration: underline;
+}
+
+body,
+td,
+th {
+	color: #333333;
+}
+
+img {
+	border: 0px;
+}
+
+html {
+	color: #000000;
+	background: #ffffff;
+	scrollbar-base-color: #28ADE5;
+	scrollbar-face-color: #28ADE5;
+	scrollbar-track-color: #004F7C;
+	scrollbar-arrow-color: #ffffff;
+	scrollbar-highlight-color: #254BAA;
+	scrollbar-3dlight-color: #004F7A;
+	scrollbar-shadow-color: #004F7C;
+	scrollbar-darkshadow-color: #28ADE5;
+}
+
+body {
+	color: #000000;
+	background: #ffffff;
+	scrollbar-base-color: #28ADE5;
+	scrollbar-face-color: #28ADE5;
+	scrollbar-track-color: #004F7C;
+	scrollbar-arrow-color: #ffffff;
+	scrollbar-highlight-color: #254BAA;
+	scrollbar-3dlight-color: #004F7A;
+	scrollbar-shadow-color: #004F7C;
+	scrollbar-darkshadow-color: #28ADE5;
+}
+
+#rightZw {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/*顶部使用*/
+
+.headTable {
+	BACKGROUND: url(../Images/bgn1.jpg) repeat-x;
+	width: 100%;
+}
+
+.headTable TH {
+	COLOR: #333;
+	HEIGHT: 37px;
+	text-indent: 35px;
+	font-size: 12px;
+	text-align: left;
+	background: url(../Images/bgn7.jpg) 5px 8px no-repeat;
+}
+
+.headTable TH.links {
+	background: none;
+	text-align: center;
+	text-indent: 0px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+
+/*列表使用*/
+
+.listTable {
+	BACKGROUND-COLOR: #cccccc;
+	width: 100%;
+	margin-top: -1px;
+}
+
+.listTable TH {
+	COLOR: #5C5A5D;
+	HEIGHT: 29px;
+	BACKGROUND: url(../Images/bgn5.jpg) repeat-x;
+	TEXT-ALIGN: center;
+}
+
+.listTable TD {
+	text-indent: 5px;
+	LINE-HEIGHT: 29px;
+	BACKGROUND-COLOR: #fff;
+}
+
+
+/*命令使用*/
+
+.cmdTable {
+	width: 100%;
+}
+
+.cmdTable TH {
+	text-indent: 10px;
+	COLOR: #333;
+	HEIGHT: 32px;
+	BACKGROUND: url(../Images/bgn6.jpg) repeat-x;
+	TEXT-ALIGN: left;
+}
+
+.cmdTable TH SPAN {
+	cursor: pointer;
+}
+
+
+/*表单使用*/
+
+.formTable {
+	BACKGROUND-COLOR: #cccccc;
+	width: 100%;
+}
+
+.formTable textarea {
+	width: 350px;
+	height: 100px;
+}
+
+.formTable TH {
+	HEIGHT: 29px;
+	BACKGROUND-COLOR: #fff;
+	text-align: right;
+	font-weight: normal;
+	line-height: 29px;
+	padding: 2px;
+}
+
+.formTable TD {
+	LINE-HEIGHT: 29px;
+	BACKGROUND-COLOR: #fff;
+	text-align: left;
+	padding: 2px;
+}
+
+.listTable TD img{
+	height: 24px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+
+/*居中样式*/
+
+td.center,
+th.center {
+	text-align: center;
+	text-indent: 0px;
+}
+
+.sortInput {
+	width: 60px;
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+
+/*翻页样式*/
+
+.pages {
+	text-align: center;
+	padding: 5px 0;
+	background-color: #FFFFFF;
+}
+
+.pages a,
+.pages span {
+	display: inline-block;
+	padding: 2px 5px;
+	margin: 0 1px;
+	border: 1px solid #919191;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.pages a,
+.pages li {
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	color: #999999;
+}
+
+.pages a.first,
+.pages a.prev,
+.pages a.next,
+.pages a.end {
+	margin: 0;
+}
+
+.pages a:hover {
+	border-color: #919191;
+}
+
+.pages span.current {
+	background: #919191;
+	color: #FFF;
+	font-weight: 700;
+	border-color: #919191;
+}
+
+
+/*按钮*/
+
+.btn {
+	border: 0px;
+	margin: 0px;
+	font-size: 12px;
+	height: 22px;
+	line-height: 20px;
+	background-color: #2495D1;
+	color: #fff;
+	cursor: pointer;
+	border: #708598 1px solid;
+}
+
+
+/*单独上传*/
+
+#showUploadDialogBg {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2000;
+	background-color: #000;
+	filter: alpha(opacity=10);
+	-moz-opacity: 0.1;
+	-khtml-opacity: 0.1;
+	opacity: 0.1;
+}
+
+#showUploadDialog {
+	width: 370px;
+	height: 168px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 2001;
+	margin-left: -185px;
+	margin-top: -84px;
+	background: url(../Images/uploadbg.jpg) no-repeat;
+}
+
+#showUploadDialog .title {
+	width: auto;
+	height: 25px;
+	overflow: hidden;
+	text-indent: 25px;
+	line-height: 25px;
+	color: #fff;
+}
+
+#showUploadDialog .close {
+	width: 44px;
+	height: 19px;
+	overflow: hidden;
+	position: absolute;
+	right: 4px;
+	top: 0px;
+	background: url(../Images/uploadclose.jpg) no-repeat;
+	cursor: pointer;
+}
+
+#showUploadDialog .content {
+	width: 360px;
+	height: 136px;
+	overflow: hidden;
+	position: absolute;
+	left: 5px;
+	top: 26px;
+}
+
+#showUploadDialog .content iframe {
+	position: absolute;
+	left: -4px;
+	top: -4px;
+}
+
+
+/*类别收缩*/
+
+tr.closetr {
+	display: none;
+}
+
+tr.opentr {}
+
+img.shousuo {
+	cursor: pointer;
+}
+
+.listTable tr:hover {
+	background-color: rgba(255, 255, 204);
+}
+
+.listTable tr:hover td {
+	background: none;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css" />
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+<script type="text/javascript" src="__JS__/news/ThisJs.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Bianji/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Bianji/ueditor.all.min.js"></script>
+<script src="__PUBLIC__/laydate/laydate.js"></script>
+</head>
+<body>
+<table  border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tr>
+    <th width="80%">新增信息(<?php echo $sortObj['sortname']; ?>)</th>
+    <th width="20%" class="links"><a href="{:U('onePage/lists')}">【返回】</a></th>
+  </tr>
+</table>
+<form name="theForm" method="post" action="{:U('onePage/addOnePage')}" onsubmit="return ckTheNewsForm(this);">
+  <table border="0" cellpadding="0" cellspacing="1" class="formTable">
+    <tr>
+      <th width="10%">标题：</th>
+      <td width="90%"><input type="text" name="title" value="" size="40" />
+        <input type="submit" value=" 提 交 " class='btn' />
+        &nbsp;&nbsp;
+        <input type="reset" value=" 重 填 " class='btn' />
+      </td>
+    </tr>
+    
+	<tr>
+      <td colspan="2"><textarea name="content" id="content"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+
+<script type="text/javascript">
+	$(function(){
+		UE.getEditor('content',{initialFrameHeight:350,initialFrameWidth:'99%'});
+	});
+</script>
+<script>
+		
+	    laydate.render({
+	  	  elem: '#time' //指定元素
+		  ,type: 'datetime'
+	  	});
+    </script>
+</body>
+</html>

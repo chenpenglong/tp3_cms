@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{$config.webKeywords}" />
+<meta name="description" content="{$config.webDescription}" />
+
+<title>{$config.webName}</title>
+</head>
+<body class="Body-Extend">
+
+	<include file="Public:top" />
+	
+	<div id="EjMain">
+		<include file="Public:left" />
+		<div id="right">
+			<div id="yuzhuce">
+				<div class="title"><p>征文通知</p></div>
+				<ul id="zwtz">
+					<volist name="list" id="vo">
+						<li> <b>•</b> <a href="{:U('news/ready?id='.$vo['id'])}">{$vo.title}</a><span>{$vo.addTime|date='Y-m-d',###}</span></li>
+					</volist>					
+				</ul>
+				<div id="page">{$page}</div>
+			</div>
+		</div>
+	</div>
+	
+	<include file="Public:bottom" />
+	
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左侧</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/Frame.css" />
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+</head>
+<base target="FrmMain">
+<body class="LeftBody">
+<div id="Left-Sizer">
+	<div id="leftZw">&nbsp;</div>
+	<div class="Bengin"><em>网站建设</em></div>	
+	<div class="OneRecord open">
+		<h5>基本信息</h5>
+		<ul>
+			<li><a href="../../index.php" target="_blank">打开首页</a></li>
+			<li><a href="{:U('Manager/Public/RightFrm')}">欢迎界面</a></li>
+			<li><a href="{:U('admin/adminList')}">管理员账户</a></li>
+			<li><a href="{:U('index/loginOut')}" target="_top">安全退出</a></li>
+		</ul>
+	</div>
+	
+	<volist name="menu" id="vo">
+		<div class="OneRecord">
+			<h5>{$vo.name}</h5>
+			<ul>
+				<volist name="vo.list" id="it" key="key">
+					<if condition="is_array($it)">
+						<li>
+							<div class="name"><a href="javascript:;">{$key}</a></div>
+							<div class="items">
+								<foreach name="it" item="m" key="nn">
+									<div class="item"><a href="{$m}">{$nn}</a></div>
+								</foreach>	
+							</div>
+						</li>
+					<else />	
+						<li><a href="{$it}">{$key}</a></li>
+					</if>
+				</volist>
+			</ul>
+		</div>
+	</volist>
+	
+	<script type="text/javascript">
+	$(function(){
+		$(".OneRecord h5").click(function(){
+			$(this).next('ul').slideToggle('slow');
+			$(this).parent().siblings().find('ul').slideUp('slow');
+		});
+		if($(document.body).outerHeight(true)<$(document).height()){
+			$("#leftZw").css({"top":"100%"});
+		}
+		$("#Left-Sizer .OneRecord ul li .name").click(function(){
+			$(this).next('.items').slideToggle('slow');
+			$(this).parent().siblings().find('.items').slideUp('slow');
+		})
+		$("#Left-Sizer .OneRecord ul li .items .item .sname").click(function(){
+			$(this).next('.slist').slideToggle('slow');
+			$(this).parent().siblings().find('.slist').slideUp('slow');
+		})
+	});
+	</script>
+</div>
+</body>
+</html>

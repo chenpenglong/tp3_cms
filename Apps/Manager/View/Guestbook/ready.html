@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>留言查看--{$config.webName}</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css" />
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+</head>
+<body>
+<table  border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tr>
+    <th width="80%">预约查看</th>
+    <th width="20%" class="links"><a href="{:U('guestBook/lists')}">【返回】</a></th>
+</table>
+<form name="theForm" method="post" action="TheAction.php">
+  <input type="hidden" name="action" value="repaly" />
+  <input type="hidden" name="theId" value="<?php echo $theObj['id']; ?>" />
+  <table border="0" cellpadding="0" cellspacing="1" class="formTable">
+    <tr>
+      <th>客户姓名：</th>
+      <td><?php echo $theObj['nickname']; ?></td>
+    </tr>
+    <tr>
+      <th>客户电话：</th>
+      <td><?php echo $theObj['tel']; ?></td>
+    </tr>
+    <tr>
+      <th>穿着需求：</th>
+      <td><?php echo $theObj['subject']; ?></td>
+    </tr>
+    <tr>
+      <th>量体地址：</th>
+      <td>{$theObj['city']} &nbsp;&nbsp; {$theObj['address']}</td>
+    </tr>
+    <tr>
+      <th>备注：</th>
+      <td><?php echo $theObj['content']; ?></td>
+    </tr>
+    <tr>
+      <th>留言时间：</th>
+      <td><?php echo $theObj['addTime']; ?></td>
+    </tr>
+	
+  </table>
+</form>
+<script type="text/javascript">$(function(){setTableColor('no');});</script>
+</body>
+</html>

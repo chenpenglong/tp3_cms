@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css">
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tbody><tr>
+    <th width="80%">用户管理</th>
+	<if condition="$posId eq 2">
+	    <th width="20%" class="links"><a href="{:U('member/addTgz')}">【新增】</a></th>
+	</if>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="1" class="listTable">
+  <tbody><tr>
+    <th width="3%">&nbsp;</th>
+    <th width="5%">ID</th>
+    <th width="15%">姓名</th>
+    <th width="15%">邮箱</th>
+    <th width="15%">工作单位</th>
+    <th width="17%">职位</th>
+    <th width="15%">上次登录时间</th>
+    <th width="15%">操作</th>
+  </tr>
+
+  <volist name="memberList" id="vo">
+	  <tr>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);"><input type="checkbox" name="theId" value="{$vo.id}"></td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">{$vo.id}</td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">{$vo.username}</td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">{$vo.email}</td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">{$vo.work}</td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">{$vo.positionName}</td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">{$vo.lastLoginTime}</td>
+		<td class="center" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);"><a href="{:U('member/ready?id='.$vo['id'])}">【基本资料】</a></td>
+	  </tr>
+  </volist>
+
+  <tr>
+  	<td colspan="5" class="pageInfo" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">
+	</td>
+  </tr>
+</tbody></table>
+<div class="pages">{$page}</div>
+<table border="0" cellpadding="0" cellspacing="1" class="cmdTable">
+  <tbody><tr>
+    <th>
+	<span onclick="selectAll('theId');">全选</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span onclick="unSelectAll('theId');">全不选</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span onclick="antiSelectAll('theId');">反选</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span onclick="handleSelect('theId','{:U(\'member/delete\')}');">删除</span>
+	</th>
+  </tr>
+</tbody></table>
+<iframe name="hideframe" width="0" height="0"></iframe>
+<script type="text/javascript">$(function(){setTableColor();});</script>
+<script>
+
+
+</script>
+
+<div id="rightZw" style="top: 100%;">&nbsp;</div></body></html>

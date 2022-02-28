@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+body
+{margin:0px; padding:0px; font-size:12px; line-height:180%; background-color:#063A61;}
+ul,li
+{margin:0px; padding:0px;}
+
+#thebg
+{width:100%; height:auto; overflow:hidden;}
+#thebg img
+{width:100%;}
+
+
+
+#loginBody
+{width:485px; height:366px;overflow:hidden; position:absolute; left:50%; top:50%;margin-left:-242px; margin-top:-183px;
+ background:url(../Images/login.png) repeat-x;}
+#loginBtn
+{margin:0px; padding:0px; border:0px; background:#009688;
+ width:89px; height:27px; overflow:hidden; position:absolute; left:173px; top:268px;
+ text-align:center; line-height:27px; color:#fff; cursor:pointer;}
+#loginBody .txt
+{margin:0px; padding:0px;
+ width:100px; height:22px; overflow:hidden; line-height:22px;}
+#loginBody .User
+{width:220px; position:absolute; left:173px; top:153px;}
+#loginBody .Pass
+{width:220px; position:absolute; left:173px; top:189px;}
+#loginBody .CkCode
+{width:100px; position:absolute; left:173px; top:225px;}
+#loginBody .ImgCkCode
+{position:absolute; left:293px; top:225px;}
+#loginBody label
+{line-height:22px; color:#fff;}
+#loginBody .lb_user
+{position:absolute; left:100px; top:153px;}
+#loginBody .lb_pass
+{position:absolute; left:100px; top:189px;}
+#loginBody .lb_ckcode
+{position:absolute; left:100px; top:225px;}

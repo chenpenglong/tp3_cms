@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css">
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+<script type="text/javascript" src="__JS__/member/ThisJs.js"></script>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tbody><tr>
+    <th width="80%">基本资料</th>
+    <th width="20%" class="links"><a href="{:U('member/lists',array('id'=>$theObj['position']))}">【返回列表】</a></th>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="1" class="listTable">
+  <tbody>
+
+  <tr>
+    <td width="10%" class="center">姓名</td>
+    <td>{$theObj.username}</td>
+  </tr>
+
+  <tr>
+    <td width="10%" class="center">电话</td>
+    <td>{$theObj.tel}</td>
+  </tr>
+
+  <tr>
+    <td width="10%" class="center">邮箱</td>
+    <td>{$theObj.email}</td>
+  </tr>
+
+  <tr>
+    <td width="10%" class="center">微信</td>
+    <td>{$theObj.weixin}</td>
+  </tr>
+
+  <tr>
+    <td width="10%" class="center">教育经历</td>
+    <td>{$theObj.jiaoyujl}</td>
+  </tr>
+
+  <tr>
+    <td width="10%" class="center">工作单位</td>
+    <td>{$theObj.work}</td>
+  </tr>
+
+  <tr>
+    <td width="10%" class="center">职务职称</td>
+    <td>{$theObj.positionName}</td>
+  </tr>
+  
+
+  <tr>
+    <td width="10%" class="center">修改密码</td>
+	<form action="{:U('editPassWord')}" method="post" onsubmit="return editPass(this);">
+	    <input type="hidden" name="id" value="{$theObj.id}" />
+	    <td><input type="text" name="password" value="" size="10" /><input type="submit" value="确定" /></td>
+	</form>
+  </tr>
+
+ <if condition="$theObj.position eq 2">
+  	<form action="" method="post">
+	    <input type="hidden" name="id" value="{$theObj.id}" />
+	    <tr>
+	      <td width="10%" class="center">审核类型</td>
+	      <td>
+	        <select name="shenHeType">
+	        	<option value="-1">全部类型</option>
+	          <volist name="typeList" id="vo">
+	           <option value="{$vo.id}" <if condition="$theObj['shenHeType'] eq $vo['id']"> selected="selected"</if>   >{$vo.sortName}</option>
+	          </volist>
+	        </select>
+	
+	        <input type="submit" value="确定" />
+	      </td>
+	    </tr>
+	</form>
+  </if>
+
+  <tr>
+  	<td colspan="5" class="pageInfo" morenys="#E7EBEE" style="background-color: rgb(231, 235, 238);">
+	</td>
+  </tr>
+</tbody></table>
+<div class="pages">{$page}</div>
+<iframe name="hideframe" width="0" height="0"></iframe>
+<script type="text/javascript">$(function(){setTableColor();});</script>
+<script>
+
+
+</script>
+
+<div id="rightZw" style="top: 100%;">&nbsp;</div></body></html>

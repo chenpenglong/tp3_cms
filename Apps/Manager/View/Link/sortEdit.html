@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css" />
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+<script type="text/javascript" src="__JS__/news/ThisJs.js"></script>
+<script src="__PUBLIC__/laydate/laydate.js"></script>
+</head>
+<body>
+<table  border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tr>
+    <th width="80%">修改类别</th>
+    <th width="20%" class="links"><a href="{:U('link/sortList?id='.$rootId)}">【返回】</a></th>
+  </tr>
+</table>
+<form name="theForm" method="post" action="{:U('link/sortUpdate')}" onsubmit="return ckTheSortForm(this);">
+  <input type="hidden" name="id" value="{$sortObj.id}" />
+  <input type="hidden" name="pid" value="{$sortObj.pid}" />
+  <table border="0" cellpadding="0" cellspacing="1" class="formTable">
+  	
+    <tr>
+      <th width="10%">标题：</th>
+      <td width="90%"><input type="text" name="sortName" value="{$sortObj.sortName}" size="40" />
+        <input type="submit" value=" 提 交 " class='btn' />
+        &nbsp;&nbsp;
+        <input type="reset" value=" 重 填 " class='btn' />
+      </td>
+    </tr>
+    
+    <?php if( in_array($rootId, array(4)) ){ ?>
+    	<tr>
+	      <th width="10%">文档：</th>
+	      <td width="90%">
+	      	<input type="text" name="file" value="{$sortObj.file}" size="40" />
+	      	<input type="button" value=" 文件上传 " class="btn" onclick="showUploadDialog('file','theForm.file','__PUBLIC__')" />
+	      </td>
+	    </tr>
+    <?php } ?>
+	
+  </table>
+</form>
+
+</body>
+</html>

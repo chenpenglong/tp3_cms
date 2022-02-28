@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	line-height: 180%;
+}
+
+
+/*顶部*/
+
+#Top-Sizer {
+	width: 100%;
+	height: 80px;
+	overflow: hidden;
+	position: relative;
+	background: url(../Images/frame_topbg.jpg) repeat-x;
+}
+
+#Top-Sizer .extend {
+	width: 100%;
+	height: 80px;
+	overflow: hidden;
+	background: url(../Images/frame_topbg2.jpg) no-repeat;
+}
+
+#Top-Sizer .Dispaly_1 {
+	width: 273px;
+	height: 80px;
+	overflow: hidden;
+	float: left;
+	background: url(../Images/frame_toplogo.jpg) no-repeat;
+}
+
+#Top-Sizer .Dispaly_2 {
+	position: absolute;
+	right: 20px;
+	top: 46px;
+	color: #fff;
+	line-height: 30px;
+}
+
+
+/*左侧*/
+
+html {
+	color: #000000;
+	background: #28ADE5;
+	scrollbar-base-color: #28ADE5;
+	scrollbar-face-color: #28ADE5;
+	scrollbar-track-color: #004F7C;
+	scrollbar-arrow-color: #ffffff;
+	scrollbar-highlight-color: #254BAA;
+	scrollbar-3dlight-color: #004F7A;
+	scrollbar-shadow-color: #004F7C;
+	scrollbar-darkshadow-color: #28ADE5;
+}
+
+body {
+	color: #000000;
+	background: #28ADE5;
+	scrollbar-base-color: #28ADE5;
+	scrollbar-face-color: #28ADE5;
+	scrollbar-track-color: #004F7C;
+	scrollbar-arrow-color: #ffffff;
+	scrollbar-highlight-color: #254BAA;
+	scrollbar-3dlight-color: #004F7A;
+	scrollbar-shadow-color: #004F7C;
+	scrollbar-darkshadow-color: #28ADE5;
+}
+
+#Left-Sizer {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+#Left-Sizer .Bengin {
+	width: 100%px;
+	height: 37px;
+	overflow: hidden;
+	background: url(../Images/bgn1.jpg) repeat-x;
+}
+
+#Left-Sizer .Bengin em {
+	width: 100%px;
+	height: 37px;
+	overflow: hidden;
+	display: block;
+	background: url(../Images/bgn2.jpg) 11px 8px no-repeat;
+	font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 37px;
+	text-indent: 37px;
+}
+
+#Left-Sizer .OneRecord,
+#Left-Sizer .OneRecordGd {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	background-color: #FFFFFF;
+}
+
+#Left-Sizer .OneRecord h5,
+#Left-Sizer .OneRecordGd h5 {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 32px;
+	overflow: hidden;
+	background: url(../Images/bgn3.jpg) no-repeat;
+	border-top: 1px solid #4DF0F9;
+	border-bottom: 1px solid #0C77AB;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	line-height: 32px;
+	text-indent: 37px;
+}
+
+#Left-Sizer .OneRecord h5.open {
+	background: url(../Images/bgn3.jpg) 0px -32px no-repeat;
+}
+
+#Left-Sizer .OneRecord ul {
+	display: none;
+}
+
+#Left-Sizer .OneRecord ul,
+#Left-Sizer .OneRecordGd ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#Left-Sizer .OneRecord ul li,
+#Left-Sizer .OneRecordGd ul li {
+	width: 100%;
+	overflow: hidden;
+	background: url(../Images/bgn4.jpg) 18px 14px no-repeat;
+	line-height: 36px;
+	text-indent: 37px;
+	font-size: 13px;
+	border-bottom: solid 1px #DDDDDD;
+}
+#Left-Sizer .OneRecord ul li .items{
+	display: none;
+}
+#Left-Sizer .OneRecord ul li .items .item {
+	font-size: 12px;
+	line-height: 30px;
+	border-top: solid 1px #DDDDDD;
+	
+}
+#Left-Sizer .OneRecord ul li .items .item .sname{
+	text-indent: 0;
+	padding-left: 52px;
+	background-image: url(../Images/x2.gif);
+	background-position: left 30px center;
+	background-repeat: no-repeat;
+}
+#Left-Sizer .OneRecord ul li .items .item:nth-last-child(1) .sname{
+	background-image: url(../Images/x3.gif);
+}
+#Left-Sizer .OneRecord ul li .items .item .slist{
+	display: none;
+}
+#Left-Sizer .OneRecord ul li .items .item .slist .son{
+	text-indent: 0;
+	padding-left: 70px;
+	height: 30px;
+	overflow: hidden;
+	background-image: url(../Images/x2.gif);
+	background-position: left 50px center;
+	background-repeat: no-repeat;
+	border-top: solid 1px #DDDDDD;
+}
+#Left-Sizer .OneRecord ul li .items .item .slist .son:nth-last-child(1){
+	background-image: url(../Images/x3.gif);
+}
+#Left-Sizer .OneRecord a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+#Left-Sizer .OneRecord a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+#Left-Sizer .OneRecord a:hover,
+#Left-Sizer .OneRecord a:active {
+	color: #0000ff;
+	text-decoration: underline;
+}
+
+#Left-Sizer .OneRecordGd a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+#Left-Sizer .OneRecordGd a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+#Left-Sizer .OneRecordGd a:hover,
+#Left-Sizer .OneRecordGd a:active {
+	color: #0000ff;
+	text-decoration: underline;
+}
+
+#leftZw {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}

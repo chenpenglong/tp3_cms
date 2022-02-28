@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css" />
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+<script type="text/javascript" src="__JS__/news/ThisJs.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Bianji/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Bianji/ueditor.all.min.js"></script>
+<script src="__PUBLIC__/laydate/laydate.js"></script>
+</head>
+<body>
+<table  border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tr>
+    <th width="80%">修改信息</th>
+	  <th width="20%" class="links"><a href="{:U('news/lists?id='.$theObj['sort'])}">【返回】</a></th>
+  </tr>
+</table>
+<form name="theForm" method="post" action="{:U('news/editnews')}" onsubmit="return ckTheNewsForm(this);">
+  <input type="hidden" name="id" value="<?php echo $theObj['id']; ?>" />
+  <table border="0" cellpadding="0" cellspacing="1" class="formTable">
+    <tr>
+      <th width="10%">标题：</th>
+      <td width="90%"><input type="text" name="title" value="<?php echo $theObj['title']; ?>" size="40" />
+        <input type="submit" value=" 提 交 " class='btn' />
+        &nbsp;&nbsp;
+        <input type="reset" value=" 重 填 " class='btn' />
+      </td>
+    </tr>
+    
+    <tr>
+      <th width="10%">SEO标题：</th>
+      <td width="90%"><textarea name="seotitle">{$theObj.seotitle}</textarea></td>
+    </tr>
+    <tr>
+      <th width="10%">SEO关键字：</th>
+      <td width="90%"><textarea name="keywords">{$theObj.keywords}</textarea></td>
+    </tr>
+    <tr>
+      <th width="10%">SEO描述：</th>
+      <td width="90%"><textarea name="description">{$theObj.description}</textarea></td>
+    </tr>
+    
+    
+    <if condition="( in_array($findId,array()) ) or ( in_array($theObj['rootId'],array(3)) )">
+    	<tr>
+	      <th width="10%">封面图：</th>
+	      <td width="90%">
+	      	<input type="text" name="picture" value="{$theObj.picture}" size="40" />
+	      	<input type="button" value=" 图片上传 " class="btn" onclick="showUploadDialog('image','theForm.picture','__PUBLIC__')"/>
+	      </td>
+	    </tr>
+	  </if>
+    
+    <if condition="( in_array($findId,array()) ) or ( in_array($theObj['rootId'],array(3)) )">
+    	<tr>
+	      <th width="10%">时间：</th>
+	      <td width="90%"><input type="text" name="addTime" value="{$theObj.addTime|date='Y-m-d H:i:s',###}" size="40" id="time" readonly="readonly" /></td>
+	    </tr>
+	  </if>
+    
+    	
+    <in name="theObj.rootId" value="">
+    	<tr>
+	      <th width="10%">简介：</th>
+	      <td width="90%"><textarea name="jianjie">{$theObj.jianjie}</textarea></td>
+	    </tr>
+    </in>
+    
+    	
+    <in name="theObj.rootId" value="">
+    	<tr>
+	      <th width="10%">相册：</th>
+	      <td width="90%"><textarea name="imgGroup" id="imgGroup">{$theObj.imgGroup}</textarea></td>
+	    </tr>
+    </in>
+    
+    
+    <if condition="( !in_array($findId,array()) ) and ( !in_array($theObj['rootId'],array()) )">
+    	<tr>
+    		<th width="10%">内容：</th>
+	      <td width="90%"><textarea name="content" id="content">{$theObj.content}</textarea></td>
+	    </tr>
+    </if>
+	
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    
+  </table>
+</form>
+<script type="text/javascript">
+	$(function(){
+		UE.getEditor('content',{initialFrameHeight:350,initialFrameWidth:'99%'});
+		UE.getEditor('imgGroup',{toolbars:[eval("['insertimage']")],initialFrameHeight:350,initialFrameWidth:'99%'});
+	});
+</script>
+<script>
+	    laydate.render({
+	  	  elem: '#time' //指定元素
+		  ,type: 'datetime'
+	  	});
+    </script>
+</body>
+</html>

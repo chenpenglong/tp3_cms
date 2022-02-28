@@ -1,0 +1,14 @@
+<div id="footer"></div>
+
+
+<!--第三方插件-->
+{$config.otherCode}
+<!--右侧漂浮-->
+<if condition="$config.isShowPf gt 0">
+	<include file="Public:showPf" />
+</if>
+<script>
+	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+		new WOW().init();
+	};
+</script> 

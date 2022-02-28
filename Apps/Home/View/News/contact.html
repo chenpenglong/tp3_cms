@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="{$data.keywords|default=$config['webKeywords']}" />
+<meta name="description" content="{$data.description|default=$config['webDescription']}" />
+<link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.css" />
+<script type="text/javascript" src = 'http://webapi.amap.com/maps?v=1.4.0&key=972663371d8d19efc23f80fcabc049f1'></script>
+<title>{$config.webName}</title>
+
+</head>
+<body class="Body-Extend">
+
+	<include file="Public:top" />
+	
+	<div id="contact">
+		<div class="sortName">
+			<div class="zn"><img src="__IMG__/pc2.png" /></div>
+			<div class="en">Is Design To Be A Time Of Pride For Contemporary Gentry.</div>
+		</div>
+		<div class="container">
+			<div class="data col-lg-6 col-md-6 col-xs-12">
+				<div class="c1" style="background: url('__IMG__/pc44.png') left center no-repeat;">店面地址 / STORE ADDRESS：</div>	
+				<div class="c2">{$config.address}</div>
+				<div class="c1" style="background: url('__IMG__/pc45.png') left center no-repeat;">联系方式 / CHANGSHA：</div>		
+				<div class="c2">Tel ：{$config.tel}   Mob：{$config.mobile}</div>	
+				<div class="ewmGroup row">
+					<div class="ewm col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="img"><img src="__ROOT__/{$config.ewmKefu}" /></div>
+						<div class="icon"><img src="__IMG__/pc46.png" /></div>
+						<div class="t1">客服小秘书</div>
+						<div class="t2">GADBURY8</div>
+					</div>
+					<div class="ewm col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="img"><img src="__ROOT__/{$config.ewmWeixin}" /></div>
+						<div class="icon"><img src="__IMG__/pc47.png" /></div>
+						<div class="t1">官方公众号</div>
+						<div class="t2">GADBURY</div>
+					</div>
+					<div class="ewm col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="img"><img src="__ROOT__/{$config.ewmWeibo}" /></div>
+						<div class="icon"><img src="__IMG__/pc48.png" /></div>
+						<div class="t1">官方微博</div>
+						<div class="t2">纪佰瑞手工西服定制奢坊 </div>
+					</div>
+					<div class="ewm col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="img"><img src="__ROOT__/{$config.ewmDzdp}" /></div>
+						<div class="icon"><img src="__IMG__/pc49.png" /></div>
+						<div class="t1">大众点评</div>
+						<div class="t2">纪佰瑞手工西服定制奢坊</div>
+					</div>
+				</div>
+			</div>
+			<div id="map" class="map col-lg-6 col-md-6 col-xs-12"></div>
+		</div>
+	</div>
+	
+	<include file="Public:bottom" />
+	<script type="text/javascript">
+    var map = new AMap.Map('map', {
+        resizeEnable: true,
+        icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+        zoom: 15,
+        center: [104.072224,30.624532]
+        
+    });
+    var marker = new AMap.Marker({ //添加自定义点标记
+        icon : 'https://webapi.amap.com/theme/v1.3/markers/n/mark_bs.png',//24px*24px
+        position : [104.072224,30.624532],
+        offset : new AMap.Pixel(0,0),
+        map : map
+    });
+    
+    </script>
+
+</body>
+</html>

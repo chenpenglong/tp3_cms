@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="{$data.keywords|default=$config['webKeywords']}" />
+<meta name="description" content="{$data.description|default=$config['webDescription']}" />
+<title>{$data.seotitle|default=$data['title']}</title>
+<include file="Public:style" />
+
+</head>
+<body class="Body-Extend">
+
+	<include file="Public:top" />
+	
+	<div id="kepian_ready">
+		<div class="sortName">
+			<div class="zn"><img src="__IMG__/pc2.png" /></div>
+			<div class="en">Is Design To Be A Time Of Pride For Contemporary Gentry.</div>
+		</div>
+		
+		<div class="mobile_name container">
+			<div class="address"><a href="{:U('index/index')}">首页</a> > <a href="{:U('kepianList')}">产品</a></div>
+			<div class="title">{$data.title}</div>
+		</div>
+		
+		<div class="kp_imgGroup swiper-container container">
+            <div class="swiper-wrapper">
+				<volist name="data.imgGroup" id="vo">
+					<div class="swiper-slide"><img src="{$vo}"></div>
+				</volist>
+			</div>
+            <div class="swiper-button-next"></div>  
+            <div class="swiper-button-prev"></div> 
+		</div>
+		
+		<div class="mobile_imgGroup swiper-container container">
+			<div class="swiper-wrapper">
+				<volist name="data.imgGroup" id="vo">
+					<div class="swiper-slide"><img src="{$vo}"></div>
+				</volist>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		
+		{$prevNext}		
+		
+		<script>  
+			    var swiper_pc = new Swiper('.kp_imgGroup', {  
+			        //loop : true,
+			        effect: 'coverflow',  
+			        grabCursor: true,
+			        centeredSlides: true,  
+			        nextButton: '.swiper-button-next',  
+			        prevButton: '.swiper-button-prev',  
+			        coverflow: {  
+			            rotate: 0,// 旋转的角度  
+			            stretch: 200,// 拉伸   图片间左右的间距和密集度  
+			            depth: 150,// 深度   切换图片间上下的间距和密集度  
+			            modifier: 4,// 修正值 该值越大前面的效果越明显  
+			            slideShadows : false// 页面阴影效果  
+			        }  
+			    }); 
+			    var swiper_mobile = new Swiper('.mobile_imgGroup', {  
+			        loop : true,
+			        pagination : '.swiper-pagination',
+			    }); 
+		    $(document).ready(function(){
+		    });
+		    $(window).resize(function(){
+		    })
+		</script>
+		
+	</div>
+	
+	<include file="Public:bottom" />
+	
+	<script>
+		
+	</script>
+	
+</body>
+</html>

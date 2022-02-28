@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/RightFrm.css" />
+<script type="text/javascript" src="__JS__/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__JS__/Comm.js"></script>
+<script type="text/javascript" src="__JS__/float/ThisJs.js"></script>
+<style>
+	.codeImg{display: none;}
+</style>
+</head>
+<body>
+<table  border="0" cellpadding="0" cellspacing="1" class="headTable">
+  <tr>
+    <th width="80%">新增浮动</th>
+    <th width="20%" class="links"><a href="{:U('float/lists')}">【返回】</a></th>
+  </tr>
+</table>
+<form name="theForm" method="post" action="{:U('float/addFloat')}" onsubmit="return ckTheForm(this);">
+  <table border="0" cellpadding="0" cellspacing="1" class="formTable">
+    <tr>
+      <th width="10%">标题：</th>
+      <td width="90%"><input type="text" name="title" value="" size="40" /></td>
+    </tr>
+    <tr>
+      <th>类型：</th>
+      <td>
+      	<select name="type" id="type_int">
+      		<option value="0">类别</option>
+					<option value="1">QQ</option>
+					<option value="2">邮箱</option>
+					<option value="3">Msn</option>
+					<option value="4">Skype</option>
+					<option value="5">电话</option>
+					<option value="6">图片</option>
+      	</select>
+      </td>
+      <script>
+      	$('#type_int').change(function(){
+      		var typeId = $(this).val();
+      		if( typeId==6 ){
+      			$('.codeImg').show();
+      		}else{
+      			$('.codeImg').hide();
+      		}
+      	})
+      </script>
+    </tr>
+    <tr>
+      <th>代码：</th>
+      <td>
+      	<input type="text" name="code" value="" size="40" />
+      	<input type="button" value=" 图片上传 " class="btn codeImg" onclick="showUploadDialog('image','theForm.code','__PUBLIC__')" />
+      </td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <td>
+        <input type="submit" value=" 提 交 " class='btn' />
+        &nbsp;&nbsp;
+        <input type="reset" value=" 重 填 " class='btn' />
+      </td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <td style="color:#ff0000">* 类型选择为类别时只需要填写标题<br />*类型选择为电话、邮箱时只需要填写代码</td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">$(function(){setTableColor('no');});</script>
+</body>
+</html>

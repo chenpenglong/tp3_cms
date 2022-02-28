@@ -1,0 +1,299 @@
+@charset "utf-8";
+/*
+//CSS Hack
+property:value; 所有浏览器
+_property:value; IE6
++property:value; IE7
+*property:value; IE6/IE7
+property:value \0; IE8/IE9
+property:value \9; IE6/IE7/IE8
+property:value \9\0; IE9
+
+//最小高度HACK
+min-height:500px;
+height:auto !important;
+height:500px;
+overflow:visible;
+
+//溢出文字用省略号点代替(慎用)
+white-space:nowrap; text-overflow:ellipsis; overflow:hidden;
+
+//文字两端对齐
+text-align:Justify;(火狐)
+text-justify:inter-ideograph;(IE)
+*/
+/*
+*input placeholder样式
+input::-webkit-input-placeholder { color: #FFFFFF;font-size: 12px;}
+
+*/
+.titstr1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.titstr2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.titstr3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.titstr4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.titstr5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+.titstr6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+.titstr7 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+.titstr8 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+@font-face {
+  font-family: Helvetica;
+  src: url('../font/Helvetica.ttf');
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif, '宋体';
+  background-color: #fff;
+}
+table {
+  margin: 0px;
+}
+th,
+td {
+  line-height: 180%;
+  text-align: left;
+}
+img {
+  border: 0px;
+}
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+p,
+form {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+/*通用链接*/
+a:link,
+a:visited {
+  color: #383637;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  color: #287bc7;
+  text-decoration: underline;
+}
+/*溢出文字用省略号点代替
+.HideWord {white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+*/
+/*
+ * 编辑器表格设置
+ * table
+    {border-collapse:collapse; border-spacing:0;}
+   table tr td
+    {padding:0px;}
+ */
+#thePageInfo {
+  height: 20px;
+  overflow: hidden;
+  padding: 20px 0px;
+  text-align: center;
+  clear: both;
+  font-size: 12px;
+}
+#thePageInfo em {
+  line-height: 100%;
+  padding: 2px 6px;
+  color: #949494;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+}
+#thePageInfo em a:link,
+#thePageInfo em a:visited {
+  color: #979797;
+  text-decoration: none;
+}
+#thePageInfo em a:hover,
+#thePageInfo em em a:active {
+  text-decoration: underline;
+}
+#thePageInfo .onfocus {
+  line-height: 100%;
+  padding: 2px 6px;
+  color: #fff;
+  font-style: normal;
+  background: #0071af;
+  border: 1px solid #d6d6d6;
+}
+#thePageInfo .onfocus a:link,
+#thePageInfo .onfocus a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+#thePageInfo .onfocus a:hover,
+#thePageInfo .onfocus em a:active {
+  text-decoration: underline;
+}
+#thePageInfo span {
+  color: #676767;
+}
+/*右侧漂浮*/
+#rightPiaoFu {
+  width: 120px;
+  height: auto;
+  overflow: hidden;
+  padding: 6px;
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+}
+#rightPiaoFu .content {
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+}
+#rightPiaoFu .close {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: #fff;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+#rightPiaoFu ul {
+  list-style: none;
+}
+#rightPiaoFu ul li.sort {
+  height: 20px;
+  overflow: hidden;
+  border: 1px solid #C0E6F9;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+#rightPiaoFu ul .qq,
+#rightPiaoFu ul .msn,
+#rightPiaoFu ul .skype {
+  height: auto;
+  overflow: hidden;
+  padding: 3px 0px;
+  line-height: 23px;
+  text-indent: 10px;
+}
+#rightPiaoFu ul .tel,
+#rightPiaoFu ul .email {
+  height: auto;
+  overflow: hidden;
+  line-height: 23px;
+  text-indent: 10px;
+  color: #333;
+  text-align: center;
+}
+#rightPiaoFu a:link {
+  color: #333;
+  text-decoration: none;
+}
+#rightPiaoFu a:visited {
+  color: #333;
+  text-decoration: none;
+}
+#rightPiaoFu a:hover,
+#rightPiaoFu a:active {
+  color: #ff0000;
+  text-decoration: underline;
+}
+/*结构*/
+#Left {
+  width: 230px;
+  float: left;
+}
+#Right {
+  width: 960px;
+  float: right;
+}
+/*内容详情页*/
+#NewsShow .title {
+  margin: 30px 0 10px 0;
+  text-align: center;
+  font-size: 20px;
+}
+#NewsShow .miaoshu {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#NewsShow .theContent {
+  margin-bottom: 20px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #3F3F3D;
+}
+#NewsShow .thePageInfo {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: bold;
+}
+#page {
+  text-align: center;
+}
+#page em {
+  font-style: normal;
+}
+#page a,
+#page span {
+  border: solid 1px #DDDDDD;
+  padding: 4px 10px;
+  font-size: 14px;
+  margin: 0 3px;
+}
+#page .current {
+  background-color: #bb2526;
+  border-color: #bb2526;
+  color: #FFFFFF;
+}
