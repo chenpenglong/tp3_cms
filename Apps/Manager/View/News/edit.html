@@ -44,17 +44,18 @@
     </tr>
     
     
-    <if condition="( in_array($findId,array()) ) or ( in_array($theObj['rootId'],array(3)) )">
+    <if condition="( in_array($findId,array()) ) or ( in_array($theObj['rootId'],array()) )">
     	<tr>
 	      <th width="10%">封面图：</th>
 	      <td width="90%">
 	      	<input type="text" name="picture" value="{$theObj.picture}" size="40" />
-	      	<input type="button" value=" 图片上传 " class="btn" onclick="showUploadDialog('image','theForm.picture','__PUBLIC__')"/>
+	      	<input type="button" value=" 图片上传 " class="btn imgbtn" />
+	      	<!--<input type="button" value=" 图片上传 " class="btn" onclick="showUploadDialog('image','theForm.picture','__PUBLIC__')"/>-->
 	      </td>
 	    </tr>
 	  </if>
     
-    <if condition="( in_array($findId,array()) ) or ( in_array($theObj['rootId'],array(3)) )">
+    <if condition="( in_array($findId,array()) ) or ( in_array($theObj['rootId'],array()) )">
     	<tr>
 	      <th width="10%">时间：</th>
 	      <td width="90%"><input type="text" name="addTime" value="{$theObj.addTime|date='Y-m-d H:i:s',###}" size="40" id="time" readonly="readonly" /></td>
@@ -103,5 +104,8 @@
 		  ,type: 'datetime'
 	  	});
     </script>
+    
+    <include file="Public:layui" />
+    
 </body>
 </html>
