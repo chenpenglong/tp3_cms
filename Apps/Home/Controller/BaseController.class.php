@@ -9,7 +9,9 @@ class BaseController extends Controller{
 	public function _initialize(){
 		$config = M('config');
 		$configData = $config->where('id=1')->find();
+		$configData = unserialize($configData['siteconfig']);
 		$configData['webLogo'] = __ROOT__."/".$configData['webLogo'];
+		$this->webSet = $configData;
 		$this->assign("config",$configData);
 		$float = M('float');
 		$piaoFuDataList = $float->order('serialNum asc')->select();
