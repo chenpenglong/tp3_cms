@@ -33,5 +33,32 @@
 				});
 			}
 		});
+		//执行实例
+		var uploadInst = upload.render({
+			elem: '.filebtn', //绑定元素
+			url: "{:U('base/upload')}", //上传接口
+			size: 1024*10, //限制文件大小，单位 KB
+			accept:"file",
+			done: function(res) {
+				console.log(res);
+				//如果上传失败
+				if(res.code > 0) {
+					//			return layer.msg('上传失败');
+					return layer.msg(res.message);
+				}
+				//上传成功
+				var item = this.item;
+				item.prev("input").val(res.url);
+			},
+			error: function(e) {
+				//演示失败状态，并实现重传
+				var demoText = $('#demoText');
+				demoText.html(
+					'<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+				demoText.find('.demo-reload').on('click', function() {
+					uploadInst.upload();
+				});
+			}
+		});
 	});
 </script>
