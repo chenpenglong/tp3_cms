@@ -9,8 +9,7 @@ class BaseController extends Controller{
 	public function _initialize(){
 		$config = M('config');
 		$configData = $config->where('id=1')->find();
-		$configData = unserialize($configData['siteconfig']);
-		$configData['webLogo'] = __ROOT__."/".$configData['webLogo'];
+		$configData = empty($configData['sitedata'])?[]:unserialize($configData['sitedata']);
 		$this->webSet = $configData;
 		$this->assign("config",$configData);
 		$float = M('float');
@@ -21,7 +20,7 @@ class BaseController extends Controller{
     	$bannerList = $link->where("sort=1")->order("serialNum desc,id desc")->select();
 		$this->assign('bannerList',$bannerList);
 
-    $this->assign('version',rand(1000, 9999));
+    	$this->assign('version',rand(1000, 9999));
 
 	}
 	
