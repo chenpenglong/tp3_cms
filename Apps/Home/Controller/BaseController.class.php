@@ -9,7 +9,7 @@ class BaseController extends Controller{
 	public function _initialize(){
 		$config = M('config');
 		$configData = $config->where('id=1')->find();
-		$configData = empty($configData['sitedata'])?[]:unserialize($configData['sitedata']);
+		$configData = empty($configData['siteconfig'])?[]:unserialize($configData['siteconfig']);
 		$this->webSet = $configData;
 		$this->assign("config",$configData);
 		$float = M('float');
