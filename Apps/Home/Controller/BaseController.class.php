@@ -7,6 +7,7 @@ use Think\Verify;
 class BaseController extends Controller{
 	public $webSet;
 	public function _initialize(){
+		include_once __ROOT__."/sqlInj.php";
 		$config = M('config');
 		$configData = $config->where('id=1')->find();
 		$configData = empty($configData['siteconfig'])?[]:unserialize($configData['siteconfig']);
